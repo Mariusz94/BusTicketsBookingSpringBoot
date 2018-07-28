@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Status</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<center>
+    <p>D- kierowcy, numerki na planszy to numery pasażerów</p>
+    <div class="row">
+        <div class="col-md-15 mb-3">
+            <button type="button" class="btn btn-light" onclick="location.href='/index'" ;>Powrót
+            </button>
+        </div>
+    </div>
+    <div>
+        <table border="1">
+            <tr class="main-table">
+                <td class="table-city">
+                    Zakopane:
+                </td>
+                <td class="table-bus">
+                    <table border="1" class="hello">
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[0][0] != null} ? ${seats[0][0].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][4] != null} ? ${seats[0][4].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][8] != null} ? ${seats[0][8].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][12] != null} ? ${seats[0][12].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][16] != null} ? ${seats[0][16].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][20] != null} ? ${seats[0][20].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="hello">
+                            <td >D</td>
+                            <td th:text="${seats[0][1] != null} ? ${seats[0][1].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][5] != null} ? ${seats[0][5].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][9] != null} ? ${seats[0][9].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][13] != null} ? ${seats[0][13].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][17] != null} ? ${seats[0][17].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[0][21] != null} ? ${seats[0][21].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="free-field">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hello">
+                            <td>D</td>
+                            <td th:text="${seats[0][2] != null} ? ${seats[0][2].getNumberPassenger()}:' '">3</td>
+                            <td th:text="${seats[0][6] != null} ? ${seats[0][6].getNumberPassenger()}:' '">7</td>
+                            <td th:text="${seats[0][10] != null} ? ${seats[0][10].getNumberPassenger()}:' '">11</td>
+                            <td th:text="${seats[0][14] != null} ? ${seats[0][14].getNumberPassenger()}:' '">15</td>
+                            <td th:text="${seats[0][18] != null} ? ${seats[0][18].getNumberPassenger()}:' '">19</td>
+                            <td th:text="${seats[0][22] != null} ? ${seats[0][22].getNumberPassenger()}:' '">23</td>
+                        </tr>
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[0][3] != null} ? ${seats[0][3].getNumberPassenger()}:' '">4</td>
+                            <td th:text="${seats[0][7] != null} ? ${seats[0][7].getNumberPassenger()}:' '">8</td>
+                            <td th:text="${seats[0][11] != null} ? ${seats[0][11].getNumberPassenger()}:' '">12</td>
+                            <td th:text="${seats[0][15] != null} ? ${seats[0][15].getNumberPassenger()}:' '">16</td>
+                            <td th:text="${seats[0][19] != null} ? ${seats[0][19].getNumberPassenger()}:' '">20</td>
+                            <td th:text="${seats[0][23] != null} ? ${seats[0][23].getNumberPassenger()}:' '">24</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <div>
+        <table border="1">
+            <tr class="main-table">
+                <td class="table-city">
+                    Kraków:
+                </td>
+                <td class="table-bus">
+                    <table border="1" class="hello">
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[1][0] != null} ? ${seats[1][0].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][4] != null} ? ${seats[1][4].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][8] != null} ? ${seats[1][8].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][12] != null} ? ${seats[1][12].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][16] != null} ? ${seats[1][16].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][20] != null} ? ${seats[1][20].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="hello">
+                            <td >D</td>
+                            <td th:text="${seats[1][1] != null} ? ${seats[1][1].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][5] != null} ? ${seats[1][5].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][9] != null} ? ${seats[1][9].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][13] != null} ? ${seats[1][13].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][17] != null} ? ${seats[1][17].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[1][21] != null} ? ${seats[1][21].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="free-field">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hello">
+                            <td>D</td>
+                            <td th:text="${seats[1][2] != null} ? ${seats[1][2].getNumberPassenger()}:' '">3</td>
+                            <td th:text="${seats[1][6] != null} ? ${seats[1][6].getNumberPassenger()}:' '">7</td>
+                            <td th:text="${seats[1][10] != null} ? ${seats[1][10].getNumberPassenger()}:' '">11</td>
+                            <td th:text="${seats[1][14] != null} ? ${seats[1][14].getNumberPassenger()}:' '">15</td>
+                            <td th:text="${seats[1][18] != null} ? ${seats[1][18].getNumberPassenger()}:' '">19</td>
+                            <td th:text="${seats[1][22] != null} ? ${seats[1][22].getNumberPassenger()}:' '">23</td>
+                        </tr>
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[1][3] != null} ? ${seats[1][3].getNumberPassenger()}:' '">4</td>
+                            <td th:text="${seats[1][7] != null} ? ${seats[1][7].getNumberPassenger()}:' '">8</td>
+                            <td th:text="${seats[1][11] != null} ? ${seats[1][11].getNumberPassenger()}:' '">12</td>
+                            <td th:text="${seats[1][15] != null} ? ${seats[1][15].getNumberPassenger()}:' '">16</td>
+                            <td th:text="${seats[1][19] != null} ? ${seats[1][19].getNumberPassenger()}:' '">20</td>
+                            <td th:text="${seats[1][23] != null} ? ${seats[1][23].getNumberPassenger()}:' '">24</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <div>
+        <table border="1">
+            <tr class="main-table">
+                <td class="table-city">
+                    Łódź:
+                </td>
+                <td class="table-bus">
+                    <table border="1" class="hello">
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[2][0] != null} ? ${seats[2][0].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][4] != null} ? ${seats[2][4].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][8] != null} ? ${seats[2][8].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][12] != null} ? ${seats[2][12].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][16] != null} ? ${seats[2][16].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][20] != null} ? ${seats[2][20].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="hello">
+                            <td >D</td>
+                            <td th:text="${seats[2][1] != null} ? ${seats[2][1].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][5] != null} ? ${seats[2][5].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][9] != null} ? ${seats[2][9].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][13] != null} ? ${seats[2][13].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][17] != null} ? ${seats[2][17].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[2][21] != null} ? ${seats[2][21].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="free-field">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hello">
+                            <td>D</td>
+                            <td th:text="${seats[2][2] != null} ? ${seats[2][2].getNumberPassenger()}:' '">3</td>
+                            <td th:text="${seats[2][6] != null} ? ${seats[2][6].getNumberPassenger()}:' '">7</td>
+                            <td th:text="${seats[2][10] != null} ? ${seats[2][10].getNumberPassenger()}:' '">11</td>
+                            <td th:text="${seats[2][14] != null} ? ${seats[2][14].getNumberPassenger()}:' '">15</td>
+                            <td th:text="${seats[2][18] != null} ? ${seats[2][18].getNumberPassenger()}:' '">19</td>
+                            <td th:text="${seats[2][22] != null} ? ${seats[2][22].getNumberPassenger()}:' '">23</td>
+                        </tr>
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[2][3] != null} ? ${seats[2][3].getNumberPassenger()}:' '">4</td>
+                            <td th:text="${seats[2][7] != null} ? ${seats[2][7].getNumberPassenger()}:' '">8</td>
+                            <td th:text="${seats[2][11] != null} ? ${seats[2][11].getNumberPassenger()}:' '">12</td>
+                            <td th:text="${seats[2][15] != null} ? ${seats[2][15].getNumberPassenger()}:' '">16</td>
+                            <td th:text="${seats[2][19] != null} ? ${seats[2][19].getNumberPassenger()}:' '">20</td>
+                            <td th:text="${seats[2][23] != null} ? ${seats[2][23].getNumberPassenger()}:' '">24</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <div>
+        <table border="1">
+            <tr class="main-table">
+                <td class="table-city">
+                    Koszalin:
+                </td>
+                <td class="table-bus">
+                    <table border="1" class="hello">
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[3][0] != null} ? ${seats[3][0].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][4] != null} ? ${seats[3][4].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][8] != null} ? ${seats[3][8].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][12] != null} ? ${seats[3][12].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][16] != null} ? ${seats[3][16].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][20] != null} ? ${seats[3][20].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="hello">
+                            <td >D</td>
+                            <td th:text="${seats[3][1] != null} ? ${seats[3][1].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][5] != null} ? ${seats[3][5].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][9] != null} ? ${seats[3][9].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][13] != null} ? ${seats[3][13].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][17] != null} ? ${seats[3][17].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[3][21] != null} ? ${seats[3][21].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="free-field">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hello">
+                            <td>D</td>
+                            <td th:text="${seats[3][2] != null} ? ${seats[3][2].getNumberPassenger()}:' '">3</td>
+                            <td th:text="${seats[3][6] != null} ? ${seats[3][6].getNumberPassenger()}:' '">7</td>
+                            <td th:text="${seats[3][10] != null} ? ${seats[3][10].getNumberPassenger()}:' '">11</td>
+                            <td th:text="${seats[3][14] != null} ? ${seats[3][14].getNumberPassenger()}:' '">15</td>
+                            <td th:text="${seats[3][18] != null} ? ${seats[3][18].getNumberPassenger()}:' '">19</td>
+                            <td th:text="${seats[3][22] != null} ? ${seats[3][22].getNumberPassenger()}:' '">23</td>
+                        </tr>
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[3][3] != null} ? ${seats[3][3].getNumberPassenger()}:' '">4</td>
+                            <td th:text="${seats[3][7] != null} ? ${seats[3][7].getNumberPassenger()}:' '">8</td>
+                            <td th:text="${seats[3][11] != null} ? ${seats[3][11].getNumberPassenger()}:' '">12</td>
+                            <td th:text="${seats[3][15] != null} ? ${seats[3][15].getNumberPassenger()}:' '">16</td>
+                            <td th:text="${seats[3][19] != null} ? ${seats[3][19].getNumberPassenger()}:' '">20</td>
+                            <td th:text="${seats[3][23] != null} ? ${seats[3][23].getNumberPassenger()}:' '">24</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <div>
+        <table border="1">
+            <tr class="main-table">
+                <td class="table-city">
+                    Gdańsk:
+                </td>
+                <td class="table-bus">
+                    <table border="1" class="hello">
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[4][0] != null} ? ${seats[4][0].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][4] != null} ? ${seats[4][4].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][8] != null} ? ${seats[4][8].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][12] != null} ? ${seats[4][12].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][16] != null} ? ${seats[4][16].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][20] != null} ? ${seats[4][20].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="hello">
+                            <td >D</td>
+                            <td th:text="${seats[4][1] != null} ? ${seats[4][1].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][5] != null} ? ${seats[4][5].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][9] != null} ? ${seats[4][9].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][13] != null} ? ${seats[4][13].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][17] != null} ? ${seats[4][17].getNumberPassenger()}:' '"></td>
+                            <td th:text="${seats[4][21] != null} ? ${seats[4][21].getNumberPassenger()}:' '"></td>
+                        </tr>
+                        <tr class="free-field">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hello">
+                            <td>D</td>
+                            <td th:text="${seats[4][2] != null} ? ${seats[4][2].getNumberPassenger()}:' '">3</td>
+                            <td th:text="${seats[4][6] != null} ? ${seats[4][6].getNumberPassenger()}:' '">7</td>
+                            <td th:text="${seats[4][10] != null} ? ${seats[4][10].getNumberPassenger()}:' '">11</td>
+                            <td th:text="${seats[4][14] != null} ? ${seats[4][14].getNumberPassenger()}:' '">15</td>
+                            <td th:text="${seats[4][18] != null} ? ${seats[4][18].getNumberPassenger()}:' '">19</td>
+                            <td th:text="${seats[4][22] != null} ? ${seats[4][22].getNumberPassenger()}:' '">23</td>
+                        </tr>
+                        <tr class="hello">
+                            <td class="free-field"></td>
+                            <td th:text="${seats[4][3] != null} ? ${seats[4][3].getNumberPassenger()}:' '">4</td>
+                            <td th:text="${seats[4][7] != null} ? ${seats[4][7].getNumberPassenger()}:' '">8</td>
+                            <td th:text="${seats[4][11] != null} ? ${seats[4][11].getNumberPassenger()}:' '">12</td>
+                            <td th:text="${seats[4][15] != null} ? ${seats[4][15].getNumberPassenger()}:' '">16</td>
+                            <td th:text="${seats[4][19] != null} ? ${seats[4][19].getNumberPassenger()}:' '">20</td>
+                            <td th:text="${seats[4][23] != null} ? ${seats[4][23].getNumberPassenger()}:' '">24</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-15 mb-3">
+            <button type="button" class="btn btn-light" onclick="location.href='/index'" ;>Powrót
+            </button>
+        </div>
+    </div>
+</center>
+</body>
+</html>

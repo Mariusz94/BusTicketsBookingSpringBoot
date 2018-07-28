@@ -1,0 +1,25 @@
+.hello > td {
+    width: 40px;
+    height: 20px;
+    text-align: center;
+}
+.free-field {
+    background: #94acff;
+    width: 40px;
+    height: 20px;
+}
+.free-seats {
+    background: #92ff2f;
+}
+.occupied-seats {
+    background: #ff9b64;
+}
+.main-table{
+    height: 150px;
+}
+.table-bus{
+    width: 300px;
+}
+.table-city{
+    width: 300px;
+}

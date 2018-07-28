@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<center>
+    <table class="coll-md-4 order-md2 mb-4">
+        <tr>
+            <td>
+                <div th:if="${warning != null} " style="text-align: center;" class="alert alert-danger" role="alert" th:text="${warning}">
+                </div>
+                <div th:if="${info == 'true'} " style="text-align: center;" class="alert alert-success" role="alert">Zakupiono
+                </div>
+                <div th:if="${info == 'false'}" style="text-align: center;" class="alert alert-danger" role="alert">Brak
+                    miejsc
+                </div>
+                <div class="coll-md-4 order-md2 mb-4">
+                    <form class="needs-validation" th:action="@{/addPassenger}" method="post"
+                          th:object="${passengerModel}">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label>First name</label>
+                                <input type="text" class="form-control" th:field="*{name}" placeholder="Name" required/>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label>Last name</label>
+                                <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last name"
+                                       required/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>From City</label>
+                                <select class="custom-select d-block w-100" th:field="*{fromCity}" required>
+                                    <option value="">Choose...</option>
+                                    <option th:text="${city.getName()}" th:value="${city.getName()}"
+                                            th:each="city : ${cities}"></option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>To City</label>
+                                <select class="custom-select d-block w-100" th:field="*{toCity}" required>
+                                    <option value="">Choose...</option>
+                                    <option th:text="${city.getName()}" th:value="${city.getName()}"
+                                            th:each="city : ${cities}"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Kup bilet</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="col-md-2 mb-3">
+                        <button type="button" class="btn btn-light" onclick="location.href='/index'" ;>Powrót
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>

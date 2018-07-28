@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Pasażerów</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<center>
+    <div class="container" >
+        <h2>Lista pasażerów</h2>
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <br>
+        <table th:if="${passengers} != null" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td width="50">Usuń(do testów)</td>
+                <td>Numer pasażera</td>
+                <td>Imię</td>
+                <td>Nazwisko</td>
+                <td>Z miasta</td>
+                <td>Do miasta</td>
+                <td>Numer siedzenia</td>
+            </tr>
+            </thead>
+            <tbody id="myTable">
+            <a th:each="passenger : ${passengers}">
+                <tr>
+                    <td>
+                        <a class="close" aria-label="Close" th:href="'/delete/' + ${passenger.getId()}">
+                            <span aria-hidden="true">&times;</span>
+                        </a>
+                    </td>
+                    <td th:text="${passenger.getNumberPassenger()}"></td>
+                    <td th:text="${passenger.getName()}"></td>
+                    <td th:text="${passenger.getLastName()}"></td>
+                    <td th:text="${passenger.getFromCity()}"></td>
+                    <td th:text="${passenger.getToCity()}"></td>
+                    <td th:text="${passenger.getNumberOfSeat()}"></td>
+                </tr>
+            </a>
+            </tbody>
+        </table>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-md-15 mb-3">
+            <button type="button" class="btn btn-light" onclick="location.href='/index'" ;>Powrót
+            </button>
+        </div>
+    </div>
+</center>
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+</body>
+</html>
